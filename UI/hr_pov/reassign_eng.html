@@ -87,7 +87,7 @@
               hr_courses: [],
           },
           mounted: function() {
-            axios.get('http://localhost:5002/hr/'+hr_id)
+            axios.get('http://54.208.177.12:5002/hr/'+hr_id)
                   .then(response => {
                       this.hr_courses = response.data.data['courses_assigned'].split(', '); 
                       console.log(this.hr_courses)

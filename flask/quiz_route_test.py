@@ -55,7 +55,7 @@ class Test_quiz(unittest.TestCase):
         self.assertEqual(statuscode,200)
     
     # Check if content return is application/json
-    def test_quiz(self):
+    def test_quiz2(self):
         tester = app.test_client(self)
         quiz_id = 'C101-L1-Quiz'
         response = tester.get("/quiz/"+quiz_id)

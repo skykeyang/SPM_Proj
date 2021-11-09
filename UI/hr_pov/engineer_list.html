@@ -96,7 +96,7 @@
               courses: []
           },
           mounted: function() {
-              axios.get('http://localhost:5002/engineer')
+              axios.get('http://54.208.177.12:5002/engineer')
                   .then(response => {
                       this.engineer = response.data.data.Person;
                       console.log(this.engineer)

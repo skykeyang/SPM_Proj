@@ -122,11 +122,11 @@
               class_details: [],
           },
           mounted: function() {
-              axios.get('http://localhost:5001/course/'+course_id)
+              axios.get('http://54.208.177.12:5001/course/'+course_id)
                   .then(response => {
                       this.course_class = response.data.data['course_class'].split(', '); 
                       for(var i =0; i<this.course_class.length; i++){
-                        axios.get('http://localhost:5001/course_class/'+this.course_class[i])
+                        axios.get('http://54.208.177.12:5001/course_class/'+this.course_class[i])
                           .then(response => {
                               this.class_details.push(response.data.data)
                               console.log(this.class_details)

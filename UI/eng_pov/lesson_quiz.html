@@ -229,7 +229,7 @@
         },
         mounted: function() {
             
-            axios.get('http://localhost:5004/quiz_qn_ans/'+quiz_id)
+            axios.get('http://54.208.177.12:5004/quiz_qn_ans/'+quiz_id)
                 .then(response => {
                     this.quiz_list = response.data;
                     this.qn1_ans = response.data.data;
@@ -280,7 +280,7 @@
         
 
           
-            axios.post('http://localhost:5004/quiz_take',{
+            axios.post('http://54.208.177.12:5004/quiz_take',{
                 quiz_take_id: quiz_take_id,
                 quiz_score: total_score,
               })

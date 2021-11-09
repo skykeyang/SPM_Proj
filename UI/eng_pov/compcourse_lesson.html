@@ -105,7 +105,7 @@
               lessons: []
           },
           mounted: function() {
-              axios.get('http://localhost:5001/course/'+course_id)
+              axios.get('http://54.208.177.12:5001/course/'+course_id)
                   .then(response => {
                       this.lessons = response.data.data['lessons'];
                       this.lessons = this.lessons.split(', ')

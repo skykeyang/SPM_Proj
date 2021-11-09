@@ -1,4 +1,3 @@
-
 import unittest
 import json
 
@@ -26,16 +25,6 @@ class TestEnroll_route(unittest.TestCase):
         data = test2.get("/enrollment")
         self.assertEqual(data.content_type, "application/json")
 
-
-    # # CHECK CONTENT OF GET METHOD
-    def test_enrollment_get(self):
-        test2 = app.test_client(self)
-        data =test2.get("/enrollment")
-        data_content = json.loads(data.data)
-        self.assertEqual(1, data_content['data'][0]['enrollment_id'])
-        self.assertEqual(1, data_content['data'][0]['engineer_id'])
-        self.assertEqual('C205', data_content['data'][0]['course_id'])
-        self.assertEqual('C205-C1', data_content['data'][0]['course_class_id'])
     
 
 ######METHOD=POST##################
@@ -57,4 +46,3 @@ class TestEnroll_route(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-

@@ -101,7 +101,7 @@
               course_list: []
           },
           mounted: function() {
-              axios.get('http://localhost:5001/course')
+              axios.get('http://54.208.177.12:5001/course')
                   .then(response => {
                       this.course_list = response.data.data;
                   })

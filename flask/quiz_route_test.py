@@ -101,6 +101,7 @@ class Test_quiz_qn_ans(unittest.TestCase):
         tester = app.test_client(self)
         response = tester.get("/quiz_qn_ans")
         self.assertEqual(response.content_type, "application/json")
+
         
     # Check if all the quiz Details requires are Present
     def test_quiz_details(self):
@@ -168,33 +169,8 @@ class Test_Quiz_take(unittest.TestCase):
         response = tester.get("/quiz_take")
         self.assertTrue(b'quiz_take_id' in response.data)
         self.assertTrue(b'quiz_score' in response.data)
-       
- 
-
-    # Check for Data returned
-    def test_quiz_take_details(self):
-        tester = app.test_client(self)
-        response = tester.get("/quiz_take")
-        response_body = json.loads(response.data)
-        self.assertEqual('001-C101-L1', response_body['data'][0]['quiz_take_id'])
-        self.assertEqual(2, response_body['data'][0]['quiz_score'])
       
-
-
-    # CHECK CONTENT OF POST METHOD
-    def test_take_quiz_post(data):       
-        response = app.test_client().post(
-        '/quiz_take',
-        data=json.dumps({'quiz_take_id': '002-C101-L3', 'quiz_score':'4'}),
-        content_type='application/json',
-    )
-        response = json.loads(response.get_data(data))
-
-        data.assertEqual('002-C101-L3', response['quiz_take_id'])
-        data.assertEqual(4, response['quiz_score'])
       
-       
-
 
 
 if __name__ == '__main__':

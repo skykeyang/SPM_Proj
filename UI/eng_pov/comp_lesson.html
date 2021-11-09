@@ -140,7 +140,7 @@
               doc_material: [],
           },
           mounted: function() {
-              axios.get('http://localhost:5001/course_lesson/'+lesson_id)
+              axios.get('http://54.208.177.12:5001/course_lesson/'+lesson_id)
                   .then(response => {
                       this.course_id = response.data.data['course_id'];
                       this.lesson_id = response.data.data['course_lesson_id']

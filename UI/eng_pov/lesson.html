@@ -184,7 +184,7 @@
                 course_material = 'doc_material'
               }
               var progress_id = engineer_id[2] + " " + course_class
-              axios.get('http://localhost:5001/course_progress/'+progress_id)
+              axios.get('http://54.208.177.12:5001/course_progress/'+progress_id)
                   .then(response => {
                       var pdf = response.data.data['pdf_material'];
                       var ppt = response.data.data['ppt_material'];
@@ -207,7 +207,7 @@
                       
                       // Check if all the course materials are accessed
                      
-                      axios.get('http://localhost:5001/course_lesson/'+lesson_id)
+                      axios.get('http://54.208.177.12:5001/course_lesson/'+lesson_id)
                       .then(response => {
                         
                         // Check if the material has only value

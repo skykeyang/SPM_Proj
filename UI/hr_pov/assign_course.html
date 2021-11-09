@@ -124,7 +124,7 @@
               course_class: []
           },
           mounted: function() {
-            axios.get('http://localhost:5002/engineer/'+engineer_id)
+            axios.get('http://54.208.177.12:5002/engineer/'+engineer_id)
                   .then(response => {
                     this.engineer_comp_class = response.data.data['engineer_completed_courses'].split(', ');
                     for(var i =0; i<this.engineer_comp_class.length; i++){
@@ -136,7 +136,7 @@
                     }
                   })
                   .catch(error => alert(error));
-              axios.get('http://localhost:5001/course')
+              axios.get('http://54.208.177.12:5001/course')
                   .then(response => {
                       this.courses_list = response.data.data; 
                       for(var i =0; i<this.courses_list.length; i++){

@@ -1,6 +1,6 @@
 <?php
 
-$connect = new PDO("mysql:host=localhost;dbname=mydb","root", "");
+$connect = new PDO("mysql:host=spmdb1.c4n4efeq3vyp.us-east-1.rds.amazonaws.com;dbname=mydb","admin", "spmdb123");
 
 $recieved_data = json_decode(file_get_contents("php://input"));
 

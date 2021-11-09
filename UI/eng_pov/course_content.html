@@ -188,7 +188,7 @@
               course_class: []
           },
           mounted: function() {
-              axios.get('http://localhost:5001/course/'+course_id)
+              axios.get('http://54.208.177.12:5001/course/'+course_id)
                   .then(response => {
                       this.course_list = response.data;
                       course_type = response.data.data['course_type']
@@ -223,7 +223,7 @@
         };
     },
     created: function () {
-        axios.get('http://localhost:5002/engineer/'+engineer_id)
+        axios.get('http://54.208.177.12:5002/engineer/'+engineer_id)
             .then(response => {
               this.c_courses = response.data.data['engineer_completed_courses'].split(', ')
               for(i=0;i<this.c_courses.length;i++){
@@ -264,7 +264,7 @@
         };
     },
     created: function () {
-        axios.get('http://localhost:5001/course_class/'+this.id)
+        axios.get('http://54.208.177.12:5001/course_class/'+this.id)
             .then(response => {
               this.slots = response.data.data['seats_available']
             }); 
@@ -306,7 +306,7 @@
         var registration_end = new Date(end)
         registration_end = new Date(registration_end.setMonth(end.getDate() + 15))
 
-        axios.get('http://localhost:5001/course_class/'+this.course_class)
+        axios.get('http://54.208.177.12:5001/course_class/'+this.course_class)
             .then(response => {
               this.slots = response.data.data['seats_available']
               if(this.slots <= 0){
@@ -330,7 +330,7 @@
                         }
                     else{
                       if(completed_preq.length == prequisite_course.length){
-                            axios.get('http://localhost:5003/enrollment')
+                            axios.get('http://54.208.177.12:5003/enrollment')
                             .then(response => {
                                 const enrollment_list = response.data.data;
                                 var already_exists_engineer = enrollment_list.some(el => el.engineer_id == this.engineer_id)
@@ -339,7 +339,7 @@
                                   alert('You have already enrolled for this course! Please deleted your previous request, to send in a new request.')
                                 }
                                 else{
-                                  axios.post('http://localhost:5003/enrollment', {
+                                  axios.post('http://54.208.177.12:5003/enrollment', {
                                     engineer_id: this.engineer_id,
                                     course_id: this.course_id,
                                     course_class_id: this.course_class

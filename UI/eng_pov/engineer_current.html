@@ -92,7 +92,7 @@
             courses_descr: []
         },
         mounted: function() {
-          axios.get('http://localhost:5002/engineer/'+engineer_id)
+          axios.get('http://54.208.177.12:5002/engineer/'+engineer_id)
                 .then(response => {
                     this.course_list = response.data.data['engineer_inprogress_courses'].split(', ');
                     console.log(this.course_list)
@@ -119,7 +119,7 @@
         console.log(this.id)
         this.course_class_id = this.id
         this.course_id = this.id.split('-')[0]
-        axios.get('http://localhost:5001/course/' + this.course_id)
+        axios.get('http://54.208.177.12:5001/course/' + this.course_id)
             .then(response => {
                 this.course_id = response.data.data.course_id;
                 this.course_name = response.data.data.course_name;

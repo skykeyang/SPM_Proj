@@ -77,7 +77,7 @@ class TestPerson_route(unittest.TestCase):
         data =test2.get("/hr")
         data_content = json.loads(data.data)
         self.assertEqual(366, data_content['data'][0]['hr_id'])
-        self.assertEqual('C101, C102, C103, C104, C205, C305', data_content['data'][0]['courses_assigned'])
+        self.assertEqual('C101, C102, C103, C104, C105, C305', data_content['data'][0]['courses_assigned'])
 
 
 

@@ -261,7 +261,7 @@ class Test_Course(unittest.TestCase):
         self.assertEqual('doc1.docx, doc2.docx, doc3.docx', response_body['data']['doc_material'])
         self.assertEqual('pdf1.pdf, pdf2.pdf', response_body['data']['pdf_material'])
         self.assertEqual('ppt1.pptx, ppt2.pptx', response_body['data']['ppt_material'])
-        self.assertEqual(None, response_body['data']['quiz_id'])
+        self.assertEqual('C101-L1-Quiz', response_body['data']['quiz_id'])
         self.assertEqual('vid1.mp4, vid2.mp4, vid3.mp4', response_body['data']['video_material'])
 
 

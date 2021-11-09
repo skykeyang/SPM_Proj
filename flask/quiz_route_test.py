@@ -16,7 +16,7 @@ class Test_quiz(unittest.TestCase):
         self.assertEqual(statuscode,200)
         
     # Check if content return is application/json
-    def test_quiz(self):
+    def test_quiz2(self):
         tester = app.test_client(self)
         response = tester.get("/quiz")
         self.assertEqual(response.content_type, "application/json")
@@ -33,7 +33,7 @@ class Test_quiz(unittest.TestCase):
     
 
 ## Check for Data returned
-    def test_quiz_details(self):
+    def test_quiz_details2(self):
         tester = app.test_client(self)
         response = tester.get("/quiz")
         response_body = json.loads(response.data)
@@ -47,7 +47,7 @@ class Test_quiz(unittest.TestCase):
 # Test if API '//quiz/quiz_id' works
 class Test_quiz(unittest.TestCase):
     # Check if response is 200
-    def test_quiz(self):
+    def test_quiz3(self):
         tester = app.test_client(self)
         quiz_id = 'C101-L1-Quiz'
         response = tester.get("/quiz/"+quiz_id)
@@ -55,14 +55,14 @@ class Test_quiz(unittest.TestCase):
         self.assertEqual(statuscode,200)
     
     # Check if content return is application/json
-    def test_quiz2(self):
+    def test_quiz4(self):
         tester = app.test_client(self)
         quiz_id = 'C101-L1-Quiz'
         response = tester.get("/quiz/"+quiz_id)
         self.assertEqual(response.content_type, "application/json")
         
     # Check if all the Quiz Details requires are Present
-    def test_quiz_details(self):
+    def test_quiz_details3(self):
         tester = app.test_client(self)
         quiz_id = 'C101-L1-Quiz'
         response = tester.get("/quiz/"+quiz_id)
@@ -73,7 +73,7 @@ class Test_quiz(unittest.TestCase):
 
      
     # Check for Data returned
-    def test_quiz_details(self):
+    def test_quiz_details4(self):
         tester = app.test_client(self)
         quiz_id = 'C101-L1-Quiz'
         response = tester.get("/quiz/"+quiz_id)
@@ -90,21 +90,21 @@ class Test_quiz(unittest.TestCase):
 # Test if API '/quiz_qn_ans' works
 class Test_quiz_qn_ans(unittest.TestCase):
     # Check if response is 200
-    def test_quiz(self):
+    def test_quiz5(self):
         tester = app.test_client(self)
         response = tester.get("/quiz_qn_ans")
         statuscode = response.status_code
         self.assertEqual(statuscode,200)
     
     # Check if content return is application/json
-    def test_quiz(self):
+    def test_quiz6(self):
         tester = app.test_client(self)
         response = tester.get("/quiz_qn_ans")
         self.assertEqual(response.content_type, "application/json")
 
         
     # Check if all the quiz Details requires are Present
-    def test_quiz_details(self):
+    def test_quiz_details5(self):
         tester = app.test_client(self)
         response = tester.get("/quiz_qn_ans")
         self.assertTrue(b'quiz_qn_id' in response.data)
@@ -118,7 +118,7 @@ class Test_quiz_qn_ans(unittest.TestCase):
      
 
     # Check for Data returned
-    def test_quiz_details(self):
+    def test_quiz_details6(self):
         tester = app.test_client(self)
         response = tester.get("/quiz_qn_ans")
         response_body = json.loads(response.data)
@@ -158,7 +158,7 @@ class Test_Quiz_take(unittest.TestCase):
         self.assertEqual(statuscode,200)
     
     # Check if content return is application/json
-    def test_quiz_take(self):
+    def test_quiz_take2(self):
         tester = app.test_client(self)
         response = tester.get("/quiz_take")
         self.assertEqual(response.content_type, "application/json")

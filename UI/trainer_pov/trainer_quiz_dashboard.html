@@ -106,13 +106,13 @@
               course_dict: {}
           },
           mounted: function() {
-              axios.get('http://localhost:5002/trainer/'+ trainer_id)
+              axios.get('http://54.208.177.12:5002/trainer/'+ trainer_id)
                   .then(response => {
                     var ids = response.data.data["trainer_course_class_id"];
                     this.section_list = ids.split(', ');
                   }).catch(error => alert(error));
 
-              axios.get('http://localhost:5001/course')
+              axios.get('http://54.208.177.12:5001/course')
                   .then(response => {
                     var cl = response.data.data;
                     for(i = 0; i<cl.length;i++) {
